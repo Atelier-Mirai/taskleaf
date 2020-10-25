@@ -1,5 +1,8 @@
 # README
 
+現場で使える Ruby on Rails 速習実践ガイド による
+タスク管理アプリ Taskleaf
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
