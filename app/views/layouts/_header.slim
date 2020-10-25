@@ -1,0 +1,29 @@
+header.ui.top.fixed.menu
+  .ui.container
+    .logo_mark
+      = link_to root_path do
+        = image_tag('renge.jpg', alt: 'logo', height: '64px')
+        h1
+          | 蓮華草
+          = semantic_icon('leaf')
+
+    .right.menu
+      .ui.dropdown.item
+        | 会社案内
+        i.dropdown.icon
+        .menu
+          = link_to '経営理念', root_path, class: 'ui item'
+          = link_to '会社沿革', root_path, class: 'ui item'
+          = link_to '会社概要', root_path, class: 'ui item'
+          .divider
+          = link_to '採用情報', root_path, class: 'ui item'
+
+      = link_to 'お問い合わせ', root_path, class: 'ui item'
+      .item
+        .ui.icon.input
+          input placeholder="検索" type="text"
+          i.search.link.icon
+      .item
+        = link_to 'ログイン', login_path, class: 'ui primary button'
+      .item
+        = link_to '利用者登録', signup_path, class: 'ui positive button'
