@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'welcome#index'
+  root to: 'tasks#index'
 
+  resources :tasks
   resources :users
 
   get    'login',  to: 'sessions#new'
