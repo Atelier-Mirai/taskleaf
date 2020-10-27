@@ -22,9 +22,10 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード(確認)
-        remember_me: この端末にログイン情報を記録する
         created_at: 登録日時
         updated_at: 更新日時
+        admin: 管理者権限
+        remember_me: この端末にログイン情報を記録する
   activemodel:
     models:
       session: セッション
