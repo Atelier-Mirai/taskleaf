@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path, notice: 'ログインしました'
     else
-      flash[:error] = 'メールアドレス又はパスワードが誤っています'
+      flash[:error] = 'メールアドレス または パスワードが異なります'
       render :new
     end
   end
