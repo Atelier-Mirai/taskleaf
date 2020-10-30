@@ -27,13 +27,13 @@ gem "aws-sdk-s3", require: false     # AWS使用の為
 gem 'yard'                           # ドキュメント作成
 gem 'wareki'                         # 和暦表示
 gem 'rails_autolink'                 # URLを自動的にリンクとして表示する
+gem 'ransack'                        # 検索機能、並び替え機能の実装
 
 # 開発用、テスト用のgem
 #------------------------------------------------------------------------------
 group :development, :test do
   gem 'better_errors'                # エラー画面を見やすく
   gem 'binding_of_caller'            # ページフッターにデバッグ情報表示
-  gem 'letter_opener_web'            # メールを参照出来る
 
   gem 'pry'                          # pry
   gem 'pry-rails'                    # rails consoleでirbの代わりにpryを使う
@@ -50,7 +50,7 @@ group :development do
   gem 'spring'                       # railsコマンドの実行を速くする
   gem 'spring-watcher-listen'
 
-  gem 'letter_opener'                # メール開封
+  gem 'letter_opener_web'            # メール開封
   gem 'rack-mini-profiler'           # 簡易性能測定
 end
 

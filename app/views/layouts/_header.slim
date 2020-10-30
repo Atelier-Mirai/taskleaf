@@ -19,10 +19,16 @@ header.ui.top.fixed.menu
           = link_to '採用情報', root_path, class: 'ui item'
 
       = link_to 'お問い合わせ', root_path, class: 'ui item'
+
       .item
-        .ui.icon.input
-          input placeholder="検索" type="text"
-          i.search.link.icon
+        form class="ui form" action="/tasks"
+          .ui.icon.input
+            .ui.icon.input
+              input placeholder="検索" type="text" name="q[name_cont]" id="q_name_cont"
+                i.search.link.icon
+            button.ui.primary.basic.small.button type="submit"
+              | 検索
+
       .item
         - if current_user
           = link_to 'タスク一覧', tasks_path, class: 'ui primary tertiary button'
