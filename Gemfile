@@ -13,7 +13,8 @@ gem 'webpacker'                      # フロントエンド開発で使われ�
 gem 'turbolinks'                     # 画面遷移を高速化するためのgem
 gem 'jbuilder'                       # JSON形式のデータ作成に便利なgem
 gem 'bcrypt'                         # 安全なパスワードなど、暗号化の為のgem
-gem 'image_processing'               # 画像処理のためのgem
+gem 'image_processing'               # 画像処理用
+gem 'active_storage_validations'     # 画像ファイルのバリデーション用
 gem 'bootsnap', require: false       # Railsの高速化のためのgem
 
 # 便利なgem

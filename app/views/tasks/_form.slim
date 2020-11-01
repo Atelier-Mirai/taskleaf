@@ -10,8 +10,15 @@
   .field
     = f.label :description
     = f.text_area :description
+
   .field
     = f.label :image
-    = f.file_field :image
+    - if task.image.attached? && task.image.blob&.persisted?
+      = image_tag task.image.variant(resize_to_limit: [300, 300])
+      = f.label :admin
+        = f.check_box :remove_image
+        | &nbsp; 画像を削除する
+
+    = f.file_field :image, accept: 'image/jpg, image/jpeg, image/png, image/gif'
   .field
     = f.submit nil, class: 'ui primary button'

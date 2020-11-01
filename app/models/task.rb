@@ -1,5 +1,12 @@
 class Task < ApplicationRecord
   has_one_attached :image
+  attr_accessor :remove_image
+  before_save :remove_image_if_user_accept
+  validates :image,
+    content_type: %i(gif png jpg jpeg),
+    size: { less_than_or_equal_to: 10.megabytes },
+    dimension: { width: { max: 2000 }, height: { max: 2000 } }
+
 
   # before_validation :set_nameless_name
 
@@ -52,5 +59,9 @@ class Task < ApplicationRecord
 
   def validate_name_not_including_comma
     errors.add(:name, 'にカンマを含めないでください') if name&.include?(',')
+  end
+
+  def remove_image_if_user_accept
+    self.image = nil if ActiveRecord::Type::Boolean.new.cast(remove_image)
   end
 end

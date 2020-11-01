@@ -15,7 +15,10 @@ table.ui.green.striped.table
       td = auto_link(simple_format(h(@task.description), {}, sanitaize: false, wrapper_tag: :div))
     tr
       th = Task.human_attribute_name(:image)
-      td = image_tag @task.image if @task.image.attached?
+      td
+        - if @task.image.attached?
+          = image_tag @task.image.variant(resize_to_fit: [400, 400])
+
     tr
       th = Task.human_attribute_name(:created_at)
       td = @task.created_at
