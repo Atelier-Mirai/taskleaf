@@ -29,19 +29,25 @@ html
     script src="https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js"
 
   body
-    / header menu
-    == render 'layouts/header'
+    / サイドバーメニュー(for iPhone)
+    .ui.sidebar.green.vertical.menu
+      == render 'layouts/sidebar'
 
-    main.ui.container
-      / flashメッセージの表示
-      = semantic_flash
+    / コンテンツ本体
+    .pusher
+      / header menu
+      == render 'layouts/header'
 
-      = yield
+      main.ui.container
+        / flashメッセージの表示
+        = semantic_flash
 
-    / footer menu
-    == render 'layouts/footer'
+        = yield
 
-    / debug情報の表示
-    - if Rails.env.development?
-      .ui.container
-        = debug(params)
+      / footer menu
+      == render 'layouts/footer'
+
+      / debug情報の表示
+      / - if Rails.env.development?
+      /   .ui.container
+      /     = debug(params)
