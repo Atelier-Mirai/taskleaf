@@ -17,7 +17,23 @@ table.ui.green.striped.table
       th = Task.human_attribute_name(:image)
       td
         - if @task.image.attached?
-          = image_tag @task.image.variant(resize_to_fit: [400, 400])
+          / = image_tag @task.image.variant(resize_to_fit: [400, 400])
+          = image_tag @task.image
+
+          / p image_tag url_for(@task.image)
+          / = image_tag url_for(@task.image)
+          / p image_tag @task.image.variant(convert: 'jpg').processed
+          / = image_tag @task.image.variant(convert: 'jpg').processed
+          /
+          / p image_tag @task.image.variant(resize_to_fit: [200, 200]).processed
+          / = image_tag @task.image.variant(resize_to_fit: [200, 200]).processed
+
+          / = @task.image.variant(resize_to_fit: [240,300],
+          /                       saver: { strip: true, quality: 60 })
+                                / resize_to_fit: 画像の縦横比を保ちつつ、設定値以下に縮小
+                                / strip: 画像のメタデータ(位置情報等)を削除
+                                / quality: 画像の圧縮率指定
+
 
     tr
       th = Task.human_attribute_name(:created_at)

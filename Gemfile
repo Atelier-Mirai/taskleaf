@@ -14,7 +14,6 @@ gem 'turbolinks'                     # 画面遷移を高速化するためのge
 gem 'jbuilder'                       # JSON形式のデータ作成に便利なgem
 gem 'bcrypt'                         # 安全なパスワードなど、暗号化の為のgem
 gem 'image_processing'               # 画像処理用
-gem 'active_storage_validations'     # 画像ファイルのバリデーション用
 gem 'bootsnap', require: false       # Railsの高速化のためのgem
 
 # 便利なgem
@@ -23,12 +22,13 @@ gem 'slim-rails'                     # テンプレートエンジン
 gem 'fomantic-ui-sass'               # CSSフレームワーク
 # gem 'sorcery'                        # 利用者認証
 # gem 'zxcvbn-ruby', require: 'zxcvbn' # パスワード強度確認
+gem "aws-sdk-s3", require: false     # 画像ファイルをAmazon S3に保存
+gem 'active_storage_validations'     # 画像ファイルのバリデーション用
 gem 'pagy'                           # ページネーション
-gem "aws-sdk-s3", require: false     # AWS使用の為
-gem 'yard'                           # ドキュメント作成
-gem 'wareki'                         # 和暦表示
 gem 'rails_autolink'                 # URLを自動的にリンクとして表示する
 gem 'ransack'                        # 検索機能、並び替え機能の実装
+gem 'wareki'                         # 和暦表示
+gem 'yard'                           # ドキュメント作成
 
 # 開発用、テスト用のgem
 #------------------------------------------------------------------------------

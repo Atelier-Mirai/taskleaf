@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   has_one_attached :image
+  
   attr_accessor :remove_image
   before_save :remove_image_if_user_accept
   validates :image,
