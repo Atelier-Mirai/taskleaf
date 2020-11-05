@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   # error 表示
   # match '*path' => 'application#error404', via: :all if Rails.env.production?
+  get '404', to: 'errors#not_found'
 
   # letter opener web
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
