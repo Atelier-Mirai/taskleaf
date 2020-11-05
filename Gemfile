@@ -23,7 +23,7 @@ gem 'fomantic-ui-sass'               # CSSフレームワーク
 # gem 'sorcery'                        # 利用者認証
 # gem 'zxcvbn-ruby', require: 'zxcvbn' # パスワード強度確認
 gem "aws-sdk-s3", require: false     # 画像ファイルをAmazon S3に保存
-gem 'active_storage_validations'     # 画像ファイルのバリデーション用
+# gem 'active_storage_validations'     # 画像ファイルのバリデーション用
 gem 'pagy'                           # ページネーション
 gem 'rails_autolink'                 # URLを自動的にリンクとして表示する
 gem 'ransack'                        # 検索機能、並び替え機能の実装
