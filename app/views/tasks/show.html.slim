@@ -18,6 +18,8 @@ table.ui.green.striped.table
       td
         - if @task.image.attached?
           / = image_tag @task.image.variant(resize_to_fit: [400, 400])
+          / = url_for(@task.image, width: 300, height: 200, effect: "cartoonify")
+          = url_for @task.image
           = image_tag @task.image
 
           / p image_tag url_for(@task.image)

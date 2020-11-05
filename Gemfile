@@ -23,7 +23,7 @@ gem 'fomantic-ui-sass'               # CSSフレームワーク
 # gem 'sorcery'                        # 利用者認証
 # gem 'zxcvbn-ruby', require: 'zxcvbn' # パスワード強度確認
 # gem "aws-sdk-s3", require: false     # 画像ファイルをAmazon S3に保存
-gem 'cloudinary', require: false
+gem 'cloudinary', require: true
 gem 'activestorage-cloudinary-service'
 gem 'active_storage_validations'     # 画像ファイルのバリデーション用
 gem 'pagy'                           # ページネーション
