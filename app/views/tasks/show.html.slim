@@ -19,16 +19,16 @@ table.ui.green.striped.table
         - if @task.image.attached?
           / = image_tag @task.image.variant(resize_to_fit: [400, 400])
           / = url_for(@task.image, width: 300, height: 200, effect: "cartoonify")
-          hr
-          = url_for @task.image
-          hr
+          / hr
+          / = url_for @task.image
+          / hr
           = image_tag @task.image
-          hr
-          = image_tag(url_for(@task.image))
-          / = cl_image_tag @task.image
-          / = cl_image_tag @task.image.blob.key
-
-          = rails_blob_path(@task.image)
+          / hr
+          / = image_tag(url_for(@task.image))
+          / / = cl_image_tag @task.image
+          / / = cl_image_tag @task.image.blob.key
+          /
+          / = rails_blob_path(@task.image)
 
           / p image_tag url_for(@task.image)
           / = image_tag url_for(@task.image)
