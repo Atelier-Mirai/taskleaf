@@ -14,9 +14,9 @@ html
                         type:  'image/png'
 
     / cross-site request forgeries
-    / = csrf_meta_tags
-    / / Content Security Policy
-    / = csp_meta_tag
+    = csrf_meta_tags
+    / Content Security Policy
+    = csp_meta_tag
 
     / sprocket管理下のcssを読み込む
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
