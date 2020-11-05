@@ -22,6 +22,7 @@ table.ui.green.striped.table
           = url_for @task.image
           = image_tag @task.image
 
+          = cl_image_tag @task.image
           = cl_image_tag @task.image.blob.key
 
           / p image_tag url_for(@task.image)
