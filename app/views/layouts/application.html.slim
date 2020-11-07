@@ -29,25 +29,25 @@ html
     script src="https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js"
 
   body
-    / サイドバーメニュー(for iPhone)
+    / iPhone用 サイドバーメニュー
     .ui.sidebar.green.vertical.menu
       == render 'layouts/sidebar'
 
     / コンテンツ本体
     .pusher
-      / header menu
+      / ヘッダー
       == render 'layouts/header'
 
+      / メイン
       main.ui.container
-        / flashメッセージの表示
+        / flashメッセージを表示
         = semantic_flash
-
         = yield
 
-      / footer menu
+      / フッター
       == render 'layouts/footer'
 
-      / debug情報の表示
+      / 開発中のデバッグ情報を表示
       - if Rails.env.development?
         .ui.container
           = debug(params)

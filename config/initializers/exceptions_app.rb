@@ -1,3 +1,3 @@
 Rails.application.configure do
-  config.exceptions_app = self.routes
+  config.exceptions_app = ErrorsController.action(:show)
 end
