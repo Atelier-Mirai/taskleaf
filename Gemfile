@@ -22,7 +22,6 @@ gem 'slim-rails'                     # テンプレートエンジン
 gem 'fomantic-ui-sass'               # CSSフレームワーク
 # gem 'sorcery'                        # 利用者認証
 # gem 'zxcvbn-ruby', require: 'zxcvbn' # パスワード強度確認
-# gem "aws-sdk-s3", require: false     # 画像ファイルをAmazon S3に保存
 gem 'cloudinary', require: true
 gem 'activestorage-cloudinary-service'
 gem 'active_storage_validations'     # 画像ファイルのバリデーション用
@@ -38,9 +37,8 @@ group :development, :test do
   gem 'better_errors'                # エラー画面を見やすく
   gem 'binding_of_caller'            # ページフッターにデバッグ情報表示
 
-  gem 'pry'                          # pry
   gem 'pry-rails'                    # rails consoleでirbの代わりにpryを使う
-  gem 'pry-byebug'                   # デバッグを実施
+  gem 'pry-byebug'                   # binding.pry として、デバッグを実施
   gem 'hirb'                         # console上のモデル出力を整形
   gem 'hirb-unicode'                 # console上のモデル出力を整形
 end
