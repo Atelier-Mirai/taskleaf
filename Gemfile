@@ -8,7 +8,7 @@ ruby '2.7.2'
 gem 'rails'                          # Ruby on Rails
 gem 'pg'                             # データベースに Postgresql を使う
 gem 'puma'                           # Rails動作用のWeb/アプリケーションサーバ
-gem 'sass-rails'                     # Sassを使ってスタイルシートを書く
+gem 'sass-rails'                     # Sassを使って効率的にcssを書く
 gem 'webpacker'                      # フロントエンド開発で使われているwebpack用のgem
 gem 'turbolinks'                     # 画面遷移を高速化するためのgem
 gem 'jbuilder'                       # JSON形式のデータ作成に便利なgem
@@ -18,7 +18,7 @@ gem 'bootsnap', require: false       # Railsの高速化のためのgem
 
 # 便利なgem
 #------------------------------------------------------------------------------
-gem 'slim-rails'                     # テンプレートエンジン
+gem 'slim-rails'                     # Slimを使って効率的にhtmlを記述する
 gem 'fomantic-ui-sass'               # CSSフレームワーク
 # gem 'sorcery'                        # 利用者認証
 # gem 'zxcvbn-ruby', require: 'zxcvbn' # パスワード強度確認
@@ -40,7 +40,7 @@ group :development, :test do
   gem 'pry-rails'                    # rails consoleでirbの代わりにpryを使う
   gem 'pry-byebug'                   # binding.pry として、デバッグを実施
   gem 'hirb'                         # console上のモデル出力を整形
-  gem 'hirb-unicode'                 # console上のモデル出力を整形
+  gem 'hirb-unicode'                 # hirbでの日本語出力を調整
 end
 
 # 開発用のgem

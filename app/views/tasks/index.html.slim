@@ -47,6 +47,6 @@ table.ui.green.striped.table
   = link_to 'CSV形式でダウンロードする', tasks_path(format: :csv), class: 'ui primary button'
   hr.m-4
   = form_tag import_tasks_path, multipart: true do
-    = file_field_tag :file, class: 'm-3'
+    = file_field_tag :file, class: 'm-3', style: 'width: 90%;'
     br
     = submit_tag "CSV形式のファイルから取り込む", class: 'ui primary button'

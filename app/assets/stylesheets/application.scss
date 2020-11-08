@@ -12,11 +12,13 @@
 /*
   main
 -----------------------------------------------------------------------------*/
-main.ui.container {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 1rem;
-  padding-right: 1rem;
+@media(max-width: 480px) {
+  main.ui.container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 /*
