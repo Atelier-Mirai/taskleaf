@@ -14,7 +14,7 @@ module Taskleaf
     config.time_zone                      = "Asia/Tokyo" # 日本中央標準時で、時刻を表示
     config.active_record.default_timezone = :local       # DBにローカル時刻で保存する
 
-    # config.active_storage.variant_processor = :vips      # 画像変換にlibvipsを使う
+    config.active_storage.variant_processor = :vips      # 画像変換にlibvipsを使う
           # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
