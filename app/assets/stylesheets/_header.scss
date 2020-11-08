@@ -23,6 +23,10 @@ body {
 header.ui.menu {
   background-size: 100% auto;
   background: $sakurairo;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
 
   // ハンバーガーメニューが左に来るので調整
   &.mobile.only .ui.container {
