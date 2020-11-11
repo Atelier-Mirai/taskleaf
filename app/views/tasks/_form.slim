@@ -23,4 +23,32 @@
 
     = f.file_field :images, accept: 'image/jpg, image/jpeg, image/png, image/gif', multiple: true
   .field
+
+  .ui.middle.aligned.center.aligned.grid.container
+    .ui.fluid.segment
+      input type="file" class="inputfile" id="embedpollfileinput"
+      label.ui.huge.red.right.floated.button for="embedpollfileinput"
+        i.ui.upload.icon
+        | Upload image
+      input type="file" (change)="fileEvent($event)" class="inputfile" id="embedpollfileinput"
+      label.ui.huge.green.right.floated.button for="embedpollfileinput"
+        i.ui.upload.icon
+        | Upload image
+
+
+
+
     = f.submit nil, class: 'ui primary button'
+
+css:
+  .grid.container {
+    margin-top: 5em;
+  }
+  .inputfile {
+  	width: 0.1px;
+  	height: 0.1px;
+  	opacity: 0;
+  	overflow: hidden;
+  	position: absolute;
+  	z-index: -1;
+  }
