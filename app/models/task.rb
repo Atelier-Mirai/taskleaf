@@ -1,14 +1,12 @@
 class Task < ApplicationRecord
-  has_one_attached :image
+  # has_one_attached :image # 添付画像は一つ
+  has_many_attached :images # 複数の添付画像
 
-  attr_accessor :remove_image
-  before_save :remove_image_if_user_accept
-  validates :image,
-    content_type: %i(gif png jpg jpeg),
-    size: { less_than_or_equal_to: 10.megabytes },
-    dimension: { width: { max: 2000 }, height: { max: 2000 } }
-
-# errors.add(:image, 'error message')
+  # activestorage-validator による添付画像の検証
+  validates :images,
+    content_type: %i(gif png jpg jpeg),                        # 画像の種類
+    size: { less_than_or_equal_to: 5.megabytes },              # ファイルサイズ
+    dimension: { width: { max: 2000 }, height: { max: 2000 } } # 画像の大きさ
 
   # before_validation :set_nameless_name
 
@@ -61,9 +59,5 @@ class Task < ApplicationRecord
 
   def validate_name_not_including_comma
     errors.add(:name, 'にカンマを含めないでください') if name&.include?(',')
-  end
-
-  def remove_image_if_user_accept
-    self.image = nil if ActiveRecord::Type::Boolean.new.cast(remove_image)
   end
 end

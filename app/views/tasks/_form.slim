@@ -12,14 +12,15 @@
     = f.text_area :description
 
   .field
-    = f.label :image
-    - if task.image.attached? && task.image.blob&.persisted?
+    = f.label :images
+    - if task.images.attached?# && task.images.blobs&.persisted?
       / = image_tag task.image.variant(resize_to_limit: [300, 300])
-      = image_tag task.image
-      = f.label :admin
-        = f.check_box :remove_image
-        | &nbsp; 画像を削除する
+      - task.images.each do |image|
+        = image_tag image
+        = f.label "image_ids_#{image.id}"
+          = f.check_box :image_ids, { multiple: true }, image.id, false
+          | &nbsp; 画像を削除する
 
-    = f.file_field :image, accept: 'image/jpg, image/jpeg, image/png, image/gif'
+    = f.file_field :images, accept: 'image/jpg, image/jpeg, image/png, image/gif', multiple: true
   .field
     = f.submit nil, class: 'ui primary button'

@@ -48,9 +48,18 @@ class TasksController < ApplicationController
   def update
     # # task = Task.find(params[:id])
     # task = current_user.tasks.find(params[:id])
-    @task.update!(task_params)
-    # notice以外に、success, info, warning, errorも使用可能
-    redirect_to tasks_url, notice: "タスク「#{@task.name}」を更新しました。"
+
+    # 画像の削除処理
+    params[:task][:image_ids]&.each do |image_id|
+      @task.images.find(image_id).purge
+    end
+
+    if @task.update(task_params)
+      # notice以外に、success, info, warning, errorも使用可能
+      redirect_to tasks_url, notice: "タスク「#{@task.name}」を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -68,7 +77,8 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description, :image, :remove_image)
+    # params.require(:task).permit(:name, :description, :image)
+    params.require(:task).permit(:name, :description, images:[])
   end
 
   def set_task
