@@ -51,7 +51,7 @@ class TasksController < ApplicationController
 
     # 画像の削除処理
     params[:task][:image_ids]&.each do |image_id|
-      @task.images.find(image_id).purge
+      @task.images.find(image_id).purge_later
     end
 
     if @task.update(task_params)
