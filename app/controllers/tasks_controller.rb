@@ -52,6 +52,7 @@ class TasksController < ApplicationController
     # 画像の削除処理
     params[:task][:image_ids]&.each do |image_id|
       @task.images.find(image_id).purge_later
+      ActiveStorage::Blob.unattached.find_each(&:purge)
     end
 
     if @task.update(task_params)
