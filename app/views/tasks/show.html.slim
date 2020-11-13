@@ -16,12 +16,15 @@ table.ui.green.striped.table
     tr
       th = Task.human_attribute_name(:images)
       td
-        - if @task.images.attached?
-          - @task.images.each do |image|
-            / p 元の画像
-            = image_tag image
-            / p 縮小して少し回転
-            / = image_tag image.variant(resize_to_fit: [200, 200], rotate: 10).processed
+        - if @task.images.attached?# && task.images.blobs&.persisted?
+          .ui.cards
+            - @task.images.each do |image|
+              .card
+                .image
+                  = image_tag image
+                  / p 縮小して少し回転
+                  / = image_tag image.variant(resize_to_fit: [200, 200], rotate: 10).processed
+
     tr
       th = Task.human_attribute_name(:created_at)
       td = @task.created_at
