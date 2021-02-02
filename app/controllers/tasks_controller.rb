@@ -31,7 +31,7 @@ class TasksController < ApplicationController
 
     if @task.save
       # タスク作成した旨、メール送信する
-      # TaskMailer.creation_email(@task).deliver_now
+      TaskMailer.creation_email(@task).deliver_now
 
       # notice以外に、success, info, warning, errorも使用可能
       redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"
