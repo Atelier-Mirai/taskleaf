@@ -2,10 +2,11 @@ doctype html
 html
   head
     meta charset="utf-8"
-    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta name="viewport" content="width=device-width"
     meta name="description" content="現場で使える Ruby on Rails 速習実践ガイド による
     タスク管理アプリ Taskleaf"
     title = full_title(yield(:page_title))
+
     / ファビコンの指定 https://ao-system.net/favicongenerator/
     = favicon_link_tag 'favicon.ico'
     = favicon_link_tag 'apple-touch-icon-180x180.png',
@@ -21,12 +22,9 @@ html
     / sprocket管理下のcssを読み込む
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     / webpack管理下のjsを読み込む
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    / = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     / sprocket管理下のjsを読み込む
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-
-    / IE Buster
-    script src="https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js"
 
   body
     / iPhone用 サイドバーメニュー
@@ -44,7 +42,7 @@ html
         = semantic_flash
         = yield
 
-      / / フッター
+      / フッター
       == render 'layouts/footer'
 
       / 開発中のデバッグ情報を表示

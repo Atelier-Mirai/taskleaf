@@ -9,7 +9,7 @@ gem 'rails'                          # Ruby on Rails
 gem 'pg'                             # データベースに Postgresql を使う
 gem 'puma'                           # Rails動作用のWeb/アプリケーションサーバ
 gem 'sass-rails'                     # Sassを使って効率的にcssを書く
-gem 'webpacker'                      # フロントエンド開発で使われているwebpack用のgem
+# gem 'webpacker'                      # フロントエンド開発で使われているwebpack用のgem
 gem 'turbolinks'                     # 画面遷移を高速化するためのgem
 gem 'jbuilder'                       # JSON形式のデータ作成に便利なgem
 gem 'bcrypt'                         # 安全なパスワードなど、暗号化の為のgem
